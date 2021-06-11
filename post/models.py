@@ -10,8 +10,18 @@ class Product(models.Model):
 	preowned = models.BooleanField(default=False)
 	price = models.DecimalField(max_digits=10,decimal_places=2,null=False)
 	condition = models.CharField(max_length=50,choices=condition_list,default='Good')
-	category = models.CharField(max_length=50,choices=category_list,default='Fridge')
 
 
 	def __str__(self):
 		return self.title
+
+
+
+class Category(models.Model):
+	name = models.CharField(models.CharField(max_length=50,choices=category_list,default='Fridge'))
+
+	def __str__(self):
+		return self.name
+
+	def get_absolute_url(self):
+		return reverse('product_list')
