@@ -18,7 +18,7 @@ class Product(models.Model):
 
 
 class Category(models.Model):
-	name = models.CharField(models.CharField(max_length=50,choices=category_list,default='Fridge'))
+	name = models.CharField(max_length=50,choices=category_list,default='Fridge')
 
 	def __str__(self):
 		return self.name
