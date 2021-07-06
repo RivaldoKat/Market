@@ -15,10 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from .views import *
 
 urlpatterns = [
-    path('',include('post.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/',include('django.contrib.auth.urls')),
-    path('accounts/',include('accounts.urls')),
+   path('accounts/',UserRegisterView.as_view() , name='register'),
 ]

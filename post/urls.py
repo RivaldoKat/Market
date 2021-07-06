@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django.urls import path,include
-from .views import ProductList,ProductDetail,ProductCreate,ProductEdit,DeleteProduct,Fridge,Laptop,Microoven,Stove, UserRegisterView
-
+from .views import ProductList,ProductDetail,ProductCreate,ProductEdit,DeleteProduct,Fridge,Laptop,Microoven,Stove
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,9 +16,7 @@ urlpatterns=[
 	path('product/laptop',Laptop.as_view(),name="laptop"),
 	path('product/microven',Microoven.as_view(),name="micro"),
 	path('product/stoves',Stove.as_view(),name="stove"),
-	path('register/', UserRegisterView.as_view(), name='register'),
-	path('', include('django.contrib.auth.urls')),
-	
+		
 ]
 
 

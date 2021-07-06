@@ -5,8 +5,11 @@
 	
 		{% include 'post/includes/categories.html' %}
 		<div>
+		
 		<h1>Home page</h1>
+		{% if user.is_authenticated %}
 		<a href="{% url 'product_create' %}">Create post</a>
+		{% endif %}
 	</div>
 	{% for product in products %}
 

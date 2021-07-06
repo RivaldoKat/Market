@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'post',
+    'accounts',
 
 ]
 
@@ -139,3 +140,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 LOGIN_REDIRECT_URL = 'products'
 LOGOUT_REDIRECT_URL = 'products'
+
+AUTH_USER_MODEL = 'accounts.UserAccount'
