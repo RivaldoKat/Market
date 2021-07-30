@@ -2,12 +2,12 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser ,PermissionsMixin , BaseUserManager
 
 class UserAccountManager(BaseUserManager):
-    def create_user(self , email, first_name , last_name , cellphone , password =None):
+    def create_user(self , email, first_name , last_name , cellphone  , password =None):
         if not email:
             raise ValueError("User must have email address")
 
         email =self.normalize_email(email)
-        user = self.model(email = email , first_name = first_name , last_name = last_name , cellphone = cellphone)
+        user = self.model(email = email , first_name = first_name , last_name = last_name , cellphone = cellphone )
 
         user.set_password(password)
         user.save()

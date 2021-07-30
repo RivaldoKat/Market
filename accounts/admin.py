@@ -5,5 +5,3 @@ from django.contrib.auth import get_user_model
 
 Usermodel = get_user_model()
 admin.site.register(Usermodel)
-
-
