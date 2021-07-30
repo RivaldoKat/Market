@@ -45,4 +45,6 @@ class UserEditView(generic.UpdateView):
 class ProfileView(generic.DetailView):
     model = UserAccount
     context_object_name = 'user'
-
+    def form_valid(self,form):
+	    form.instance.user = self.request.user
+	    return super(ProfileView , self).form_valid(form)

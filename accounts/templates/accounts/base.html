@@ -6,6 +6,7 @@
 	<!-- css directory comand that searches for the file of nav.css in the web app directory
 	and links it with this page -->
 	<link rel="stylesheet" type="text/css" href="{% static '/css/navbar.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/product_list.css' %}">
 
 
 	<!-- Font awesome cdn -->
@@ -23,7 +24,7 @@
 <nav class="nav_bar">
 	<div class="content">
 	  <div class="logo">
-		<a href="#">Rooms</a>
+		<a href="{% url 'posts:products' %}">Marketing Pros</a>
 	  </div>
   
 	  <div>
@@ -32,16 +33,16 @@
 		  <div class="icon cancel_btn">
 		  <i class="fas fa-times"></i>
 		</div>
-		  <li><a href="#">Home</a></li>
-		  <li><a href="#">Services</a></li>
-		  {% if user.is_authenticated %}
+		  <li><a href="{% url 'posts:create' %}">Create Post</a></li>
+		
+		  
   
-		  <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
-		  {% else %}
+		  <li><a href="{% url 'posts:categories' %}">Categories</a></li>
+		
   
 		  <li><a href="{% url 'accounts:login' %}">Login</a></li>
   
-		  {% endif %}
+	
 		</ul>
 		<div class="icon menu_btn">
 		  <i class="fas fa-bars"></i>
@@ -55,10 +56,8 @@
   <br>
   <br>
   <br>
-  <br>
-  {% if user.is_authenticated %}
-  <h1>Hello {{ request.user}}</h1>
-  {% endif %}
+  
+
 
   
 	{% block content %}

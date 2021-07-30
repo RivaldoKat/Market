@@ -1,0 +1,23 @@
+
+.product_list{
+    width: 1000px;
+    min-height: 500px;
+    margin: auto;
+    text-align: center;
+    background-image: linear-gradient(to left, #002d71, #132354, #161a39, #121020, #020202);
+    justify-content: center;
+    border-radius: 15px;
+    color: white;
+        box-shadow: 22px 15px 39px 0px rgba(0,0,0,0.83);
+-webkit-box-shadow: 22px 15px 39px 0px rgba(0,0,0,0.83);
+-moz-box-shadow: 22px 15px 39px 0px rgba(0,0,0,0.83);
+
+}
+
+
+
+
+.product_list_values{
+    font-style: sans-serif;
+    font-size: 25px;
+}

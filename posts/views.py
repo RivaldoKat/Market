@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy, reverse
 from django import forms
 from .models import Category, Product
+from .forms import ProductForm
 # Create your views here.
 
 
@@ -15,7 +16,7 @@ class ProductList(ListView):
 
 class ProductCreate(LoginRequiredMixin,CreateView):
 	model = Product
-	fields = ['title','picture','preowned','price','condition','category']
+	fields = ['name','picture','preowned','price','condition','category']
 	success_url = reverse_lazy('posts:products')
 
 	def form_valid(self,form):
