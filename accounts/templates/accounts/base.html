@@ -38,10 +38,13 @@
 		  
   
 		  <li><a href="{% url 'posts:categories' %}">Categories</a></li>
-		
-  
-		  <li><a href="{% url 'accounts:login' %}">Login</a></li>
-  
+
+		{% if user.is_authenticated %}
+		  <li><a href="{% url 'accounts:profile' user.pk%}">user</a></li>
+		{% else %}
+		<li><a href="{% url 'accounts:login' %}">Login</a></li>
+	
+		{% endif%}
 	
 		</ul>
 		<div class="icon menu_btn">
