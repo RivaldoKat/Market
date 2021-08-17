@@ -18,6 +18,7 @@ urlpatterns =[
 	path('category_list',CategoryListView.as_view(),name='categories'),
 	path('category/<int:pk>',CategoryDetail.as_view(),name='category'),
 	
+	
 ]
 
 if settings.DEBUG:

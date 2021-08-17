@@ -24,6 +24,7 @@ class ProductCreate(LoginRequiredMixin,CreateView):
 		return super(ProductCreate , self).form_valid(form)
 
 
+
 class ProductDetail(DetailView):
 	model = Product
 	context_object_name = 'categories'

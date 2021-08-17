@@ -48,3 +48,7 @@ class ProfileView(generic.DetailView):
     def form_valid(self,form):
 	    form.instance.user = self.request.user
 	    return super(ProfileView , self).form_valid(form)
+
+class PaymentView(generic.View):
+	def get(self,*args, **kwargs):
+		return render(self.request, "accounts/payment.html")
