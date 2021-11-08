@@ -1,1 +1,32 @@
-product detail
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row my-5 mx-5 ">
+    <div class="col-7">
+        <img src="{{ product.picture.url }}" width="600" height="500" style="border-radius: 15px; margin-left: -12px;">
+    </div>
+    <div class="col-5">
+        <div class="product_list_values mb-2 " style="margin-top: 40px">
+            {{ product.user }}
+        </div>
+
+        <div class="product_list_values mb-2 mt-5 pt-5">
+            {{ product.name }}
+        </div>
+
+        <div class="product_list_values mb-2">
+            condition : {{ product.condition }}
+        </div>
+        <div class="product_list_values mb-2">
+            price : R{{ product.price }}
+        </div>
+
+        <div class="product_list_values mb-2">
+            preowned : {{ product.preowned }}
+        </div>
+
+        <button class="mt-5 btn btn-secondary">Buy</button>
+    </div>
+</div>
+
+{% endblock %}

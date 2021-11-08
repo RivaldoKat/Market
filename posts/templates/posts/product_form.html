@@ -1,38 +1,13 @@
 {% extends 'accounts/base.html' %}
+{% load static %}
 {% block content %}
 
 <br/>
 <div class="form-group">
-	<form method="POST">
-		<input type="hidden" name="csrfmiddlewaretoken"
-			value="3PJo1t93cb8zkhoXtR2DsuC7FwrLR2VkPK4vYDXoiQK7hzQjEZEwHOop8rGQvHhS">
-		<p>
-			<label for="id_name">Name:</label> <input type="text" name="name" style="width: 70%;" class="form-control" maxlength="200" required
-				id="id_name">
-			</p>
-		<p><label for="id_picture">Picture:</label> <input type="file" name="picture" accept="image/*" id="id_picture"></p>
-		<p>
-			<label for="id_preowned">Preowned:</label>
-			 <input type="checkbox" name="preowned" id="id_preowned">
-			</p>
-		<p><label for="id_price">Price:</label> <input type="text" name="price" class="form-control" required id="id_price">
-		</p>
-		<p><label for="id_condition">Condition:</label> <select name="condition" class="form-control" id="id_condition">
-				<option value="Good" selected>Good</option>
+	<form method="POST" enctype="multipart/form-data">
+		 {% csrf_token %} 
+		{{ form.as_p }}
 	
-				<option value="Fair">Fair</option>
-	
-				<option value="Not Good">Not Good</option>
-	
-			</select></p>
-		<p><label for="id_category">Category:</label> <select name="category" required id="id_category">
-				<option value="" selected>---------</option>
-	
-				<option value="1">hoops</option>
-	
-				<option value="2">hoop</option>
-	
-			</select></p>
 		<button class="btn btn-secondary">Submit</button>
 	</form>
 </div>

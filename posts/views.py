@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.views.generic import *
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -27,14 +27,9 @@ class ProductCreate(LoginRequiredMixin,CreateView):
 
 class ProductDetail(DetailView):
 	model = Product
-	context_object_name = 'categories'
+	fields = ['name','picture','preowned','price','condition','category']
 	template_name = 'posts/product_detail.html'
-
-
-
-	def form_valid(self,form):
-		form.instance.user = self.request.user
-		return super(ProductCreate , self).form_valid(form)
+	success_url = reverse_lazy('post:product_detail')
 
 class ProductEdit(UpdateView):
 	model = Product
@@ -57,3 +52,4 @@ class CategoryDetail(DetailView):
 	model = Category
 	context_object_name = 'categories'
 	template_name = 'posts/category_detail.html'
+	
